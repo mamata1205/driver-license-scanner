@@ -1,0 +1,51 @@
+{
+  "name": "react-native-drivers-license-barcode-scanner",
+  "description": "React Native Drivers License Barcode Scanner component for iOS + Android",
+  "main": "index.js",
+  "author": "Mamata Sahoo <mamata.sahoo@icloud.com>",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "run:packager": "./node_modules/react-native/packager/packager.sh",
+    "run:ios": "react-native run-ios --project-path ./example/ios",
+    "start:android": "adb shell am start -n com.msahoo.react.android.driverslicensebarcodescanner.example/.MainActivity",
+    "run:android": "./gradlew installDebug && npm run start:android",
+    "lint": "./node_modules/.bin/eslint ./",
+    "build": "npm run build:js && npm run build:android && npm run build:ios",
+    "build:js": "exit 0",
+    "build:ios": "bundle install --path ./example/ios/bundles && bundle exec pod install --project-directory=./example/ios/",
+    "build:android": "./gradlew :react-native-drivers-license-barcode-scanner:assembleDebug",
+    "ci": "npm run lint",
+    "prettier": "find . -name node_modules -prune -or -name '*.js' -print | xargs prettier --write"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.0 || ^16.0",
+    "react": "^16.0",
+    "react-native": "^0.51 || ^0.52 || ^0.53 || ^0.54 || ^0.55"
+  },
+  "dependencies": {
+    "babel-plugin-module-resolver": "^2.3.0",
+    "babel-preset-react-native": "1.9.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-preset-airbnb": "^1.1.1",
+    "eslint": "^3.3.1",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.1.0",
+    "eslint-plugin-prefer-object-spread": "^1.1.0",
+    "eslint-plugin-react": "^6.1.2",
+    "prettier": "^1.12.1",
+    "prop-types": "^15.5.10",
+    "react": "^16.3.1",
+    "react-native": "^0.55"
+  },
+  "rnpm": {
+    "android": {
+      "sourceDir": "./lib/android"
+    }
+  },
+  "repository": "git@github.com:msahoo/react-native-drivers-license-barcode-scanner.git",
+  "license": "MIT"
+}

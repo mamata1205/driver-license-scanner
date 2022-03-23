@@ -1,0 +1,16 @@
+example/ios/bundles
+node_modules
+.DS_Store
+project.xcworkspace
+*.xcuserstate
+xcuserdata
+build/
+Pods/
+Example.xcworkspace/
+yarn-error.log
+.idea
+*.iml
+.gradle
+local.properties
+lib/android/src/main/gen
+example/android/app/src/main/gen
